@@ -12,7 +12,8 @@ def encode(password):
     return new_password
 
 def decode(password):
-    # coding for Jason
+    new_password = ''.join(str((int(char)+10-3)%10) for char in password)
+    print(f"The encoded password is ", password, " and the original password is ", new_password, ".", end="")
     pass
 
 def display_menu():
@@ -32,8 +33,8 @@ def main():
             new_password = encode(password)
             print("Your password has been encoded and stored!")
         elif selection == 2:
-            print("placeholder for Jason")
-            # coding for Jason
+            decode(new_password)
+            
         elif selection == 3:
             break
         else:
